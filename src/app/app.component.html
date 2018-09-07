@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center; height: 100%; width: 100%; padding: 50px 0">
+  <gridster [options]="options">
+    <gridster-item [item]="item" *ngFor="let item of dashboard; index as i">
+      <div class="button-holder">
+        <h3>Widget {{i}}</h3>
+        <button (mousedown)="removeItem($event, item)"
+                (touchstart)="removeItem($event, item)">
+          <span>Delete</span>
+        </button>
+      </div>
+    </gridster-item>
+  </gridster>
+
+
+  <ndc-dynamic [ndcDynamicComponent]="component"></ndc-dynamic>
+</div>
