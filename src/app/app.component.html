@@ -4,6 +4,11 @@
     <gridster-item [item]="item" *ngFor="let item of dashboard; index as i">
       <div class="button-holder">
         <h3>Widget {{i}}</h3>
+        <div class="gridster-item-content" *ngIf="item.hasContent">
+          <div class="stuff">
+              <ndc-dynamic [ndcDynamicComponent]="item.label"></ndc-dynamic>            
+          </div>
+        </div>
         <button (mousedown)="removeItem($event, item)"
                 (touchstart)="removeItem($event, item)">
           <span>Delete</span>
@@ -13,5 +18,5 @@
   </gridster>
 
 
-  <ndc-dynamic [ndcDynamicComponent]="component"></ndc-dynamic>
+  
 </div>

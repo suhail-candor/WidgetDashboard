@@ -1,6 +1,10 @@
 import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {CompactType, GridsterConfig, GridsterItem, GridsterItemComponent, GridsterPush, GridType} from 'angular-gridster2';
 import {Widget1Component} from './Widgets/widget1/widget1.component';
+import {Widget2Component} from './Widgets/widget2/widget2.component';
+import {Widget3Component} from './Widgets/widget3/widget3.component';
+import {Widget4Component} from './Widgets/widget4/widget4.component';
+import {Widget5Component} from './Widgets/widget5/widget5.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,7 +15,7 @@ export class AppComponent  implements OnInit {
   dashboard: Array<GridsterItem>;
   itemToPush: GridsterItemComponent;
 
-  component =  Widget1Component
+  component = [ Widget1Component, Widget2Component, Widget3Component, Widget4Component, Widget5Component]
   ngOnInit() {
     this.options = {
       gridType: GridType.VerticalFixed,
@@ -36,11 +40,11 @@ export class AppComponent  implements OnInit {
     };
     console.log("component", this.component, typeof this.component)
     this.dashboard = [
-      {cols: 1, rows: 1, y: 0, x: 0, initCallback: this.initItem.bind(this), label: this.component},
-      {cols: 1, rows: 1, y: 0, x: 1},
-      {cols: 1, rows: 1, y: 0, x: 2},
-      {cols: 1, rows: 1, y: 0, x: 3},
-      {cols: 1, rows: 1, y: 0, x: 4},
+      {cols: 1, rows: 1, y: 0, x: 0, initCallback: this.initItem.bind(this), label: this.component[0], hasContent: true},
+      {cols: 1, rows: 1, y: 0, x: 1, label: this.component[1], hasContent: true},
+      {cols: 1, rows: 1, y: 0, x: 2, label: this.component[2], hasContent: true},
+      {cols: 1, rows: 1, y: 0, x: 3, label: this.component[3], hasContent: true},
+      {cols: 1, rows: 1, y: 0, x: 4, label: this.component[4], hasContent: true},
       {cols: 1, rows: 1, y: 0, x: 5},
       {cols: 1, rows: 1, y: 0, x: 6},
       {cols: 1, rows: 1, y: 0, x: 7},
